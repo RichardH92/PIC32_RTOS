@@ -1,0 +1,10 @@
+CC = "/opt/microchip/xc32/v1.40/bin/xc32-gcc"
+CFLAGS1 = -g -x c -c -mprocessor=32MX795F512L -MMD -MF
+CFLAGS2 = -mprocessor=32MX795F512L -o
+B2H = "/opt/microchip/xc32/v1.40/bin"/xc32-bin2hex
+TEST_FILES = *.c
+
+#include ../Makefile
+
+test:
+	./test_script.sh
