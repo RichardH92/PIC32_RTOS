@@ -3,12 +3,12 @@
 .set noat
 
 
-#a0 should contain a pointer to the thread struct we are switching from
-#a1 should contain a pointer to the thread struct we are switching to
+# a0 should contain a pointer to the thread struct we are switching from
+# a1 should contain a pointer to the thread struct we are switching to
 
 .global context_switch
-
-	#Store CPU state in thread struct
+context_switch:
+	# Store CPU state in thread struct
 	sw $v0, 0($a0)
 	sw $v1, 4($a0)
 	sw $a0, 8($a0)
@@ -38,13 +38,15 @@
 	sw $sp, 104($a0)
 	sw $fp, 108($a0)
 	sw $ra, 112($a0)
-	sw $hi, 116($a0)
-	sw $lo, 120($a0)
-	sw $pc, 124($a0)
+	mfc0 $t0, $14 # Store the EPC in t0, load delay
+	mfhi $t1
+	mflo $t2
+	sw $t0, 116($a0)
+	sw $t1, 120($a0)
+	sw $t2, 124($a0)
 
-	#Restore CPU state from thread struct
+	# Restore CPU state from thread struct
 
 
 
 
-,
