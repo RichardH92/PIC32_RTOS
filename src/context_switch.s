@@ -38,9 +38,9 @@ context_switch:
 	sw $sp, 104($a0)
 	sw $fp, 108($a0)
 	sw $ra, 112($a0)
-	sw $HI, 116($a0)
-	sw $LO, 120($a0)
-	sw $PC, 124($a0)
+#	sw $HI, 116($a0)
+#	sw $LO, 120($a0)
+#	sw $PC, 124($a0)
 
 	# Restore CPU state from thread struct
 

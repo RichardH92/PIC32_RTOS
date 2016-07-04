@@ -1,4 +1,5 @@
-CC = "/opt/microchip/xc32/v1.40/bin/xc32-gcc"
+#CC = "/opt/microchip/xc32/v1.40/bin/xc32-gcc"
+CC = "/Applications/microchip/xc32/v1.40/bin/xc32-gcc"
 #CFLAGS1 = -g -x c -c -mprocessor=32MX795F512L -MMD -MF
 CFLAGS1 = -g -c -mprocessor=32MX795F512L -MMD -MF
 CFLAGS2 = -mprocessor=32MX795F512L -o

@@ -1,8 +1,11 @@
 #ifndef K_THREAD_H
 #define K_THREAD_H
 
-typedef tid_t unsigned int;
-typedef reg unsigned int;
+//#include <plib.h>
+//#include <limits.h>
+
+typedef unsigned int tid_t;
+typedef unsigned int reg;
 
 struct thread {
 	reg v0;
@@ -21,8 +24,8 @@ struct thread {
 
 	char name[16];
 	
-	unsigned int magic = 0xDEADBEEF;
-}
+	unsigned int magic;
+};
 
 
 
